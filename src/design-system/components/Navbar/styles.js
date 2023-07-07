@@ -99,4 +99,5 @@ export const CardTitle = styled.h1`
     &:hover {
         color: #0099ff;
     }
+    
 `

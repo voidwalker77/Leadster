@@ -10,8 +10,9 @@ import PublicationDateDropdown from '../DropdownMenu/DropdownMenu';
 import videosData from '../../Data/Videos/videos.json';
 import videosDataAlternative from '../../Data/Videos/videosAlternative.json';
 import BreakLine from '../BreakLine/BreakLine';
+import Modal from '../Modal/Modal'
 
- const StyledTab = styled(Tab)(({ theme }) => ({
+const StyledTab = styled(Tab)(({ theme }) => ({
     '&.Mui-selected': {
         backgroundColor: '#2c83fb',
         border: '1.5px solid',
@@ -77,6 +78,8 @@ export default function Navbar() {
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
+    const [showModal, setShowModal] = useState(false);
+
     const handleMouseEnter = (index) => {
         setHoveredIndex(index);
     };
@@ -87,6 +90,14 @@ export default function Navbar() {
 
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
+    };
+
+    const handleOpenModal = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
     };
 
     const tabStyle = {
@@ -127,6 +138,7 @@ export default function Navbar() {
                                     <Styled.Divider key={content.id}>
                                         <Styled.CardWrapper>
                                             <Styled.Card
+                                                onClick={handleOpenModal}
                                                 onMouseEnter={() => handleMouseEnter(index)}
                                                 onMouseLeave={handleMouseLeave}
                                             >
@@ -145,8 +157,16 @@ export default function Navbar() {
                                                 </Styled.OverlayImg>
 
                                             </Styled.Card>
-                                            <Styled.CardTitle>
+                                            <Styled.CardTitle onClick={handleOpenModal}>
                                                 {content.label}
+                                                {showModal && (
+                                                    <Modal
+                                                        colorTitle={<span style={{ color: '#0077b6' }}>Webinar: </span>}
+                                                        title='Como aumentar sua Geração de Leads feat. Traktor'
+                                                        text={content.description}
+                                                        onClose={handleCloseModal}
+                                                    />
+                                                )}
                                             </Styled.CardTitle>
                                         </Styled.CardWrapper>
 
@@ -155,7 +175,7 @@ export default function Navbar() {
                             </Styled.cardsWrapper>
                         </TabPanel>
                     ))}
-                                                </Tabs>
+                </Tabs>
             </Styled.Wrapper>
         </>
     )
