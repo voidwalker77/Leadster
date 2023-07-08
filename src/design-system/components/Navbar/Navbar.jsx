@@ -11,13 +11,15 @@ import videosData from '../../Data/Videos/videos.json';
 import videosDataAlternative from '../../Data/Videos/videosAlternative.json';
 import BreakLine from '../BreakLine/BreakLine';
 import Modal from '../Modal/Modal'
+import dynamic from "next/dynamic";
+
 
 const StyledTab = styled(Tab)(({ theme }) => ({
     '&.Mui-selected': {
         backgroundColor: '#2c83fb',
         border: '1.5px solid',
         padding: '1.5rem',
-        borderColor: '#0a4461',
+        borderColor: '#2c83fb',
         borderRadius: '5rem',
         color: 'white',
         fontWeight: 'bold',
@@ -44,7 +46,7 @@ const StyledTab = styled(Tab)(({ theme }) => ({
     },
 }));
 
-export default function Navbar() {
+const Navbar = () => {
 
     const links = [
         {
@@ -180,3 +182,5 @@ export default function Navbar() {
         </>
     )
 }
+
+export default dynamic (() => Promise.resolve(Navbar), {ssr: false})

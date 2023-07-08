@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Theme } from '../../utils/theme/theme'
 
 export const FooterContainer = styled.footer`
-  background-color: #f2f2f2;
+  background-color: #fff;
   padding: 60px 0;
   width: 100%;
 `;
