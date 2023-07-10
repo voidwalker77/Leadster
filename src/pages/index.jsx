@@ -4,6 +4,7 @@ import Footer from '../design-system/components/Footer/Footer';
 import Header from '../design-system/components/Header/Header';
 import VideoSection from '../design-system/components/VideoSection/VideoSection';
 import Demo from '../design-system/components/DemoScreen/Demo';
+import {isMobile} from 'react-device-detect';
 
 export default function Home() {
 	return (
@@ -11,9 +12,12 @@ export default function Home() {
 			<Styled.Wrapper>
 				<Header />
 				<CallScreen />
-				<VideoSection />
-				<Demo />
-				<Footer />
+				
+				{isMobile ? <VideoSection /> : <VideoSection />}
+				
+				{isMobile ? 'null' : <Demo />}
+
+				{isMobile ? 'null' : <Footer />}
 			</Styled.Wrapper>
 		</>
 	)

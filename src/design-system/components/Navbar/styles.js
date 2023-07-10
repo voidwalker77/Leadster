@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
+import { Menu } from '@mui/icons-material';
+import { ListItemText } from '@mui/material';
+
 import { Theme } from '../../utils/theme/theme'
 
 export const Wrapper = styled.section`
@@ -101,3 +104,16 @@ export const CardTitle = styled.h1`
     }
     
 `
+
+export const MenuIcon = styled(Menu)`
+  color: black;
+`;
+
+export const MenuContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const MenuItem = styled(ListItemText)`
+  color: black;
+`;

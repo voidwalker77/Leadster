@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Image from 'next/image';
 import { Theme } from '../../utils/theme/theme'
 
 export const Wrapper = styled.section`
@@ -8,8 +9,12 @@ export const Wrapper = styled.section`
     flex-direction: column;
     flex-wrap: wrap;
     gap: .5rem;
-    width: 65vw;
+    width: 80vw;
     margin-block: 10rem;
+
+    @media (max-width: 480px) {
+        gap: .8rem;
+    }
 `
 export const H4 = styled.div`
     text-transform: uppercase;
@@ -17,11 +22,19 @@ export const H4 = styled.div`
     padding: 1rem;
     border: 2px solid ${Theme.lightBlue};
     border-radius: 2rem 2rem 2rem .5rem;
+
+    @media (max-width: 480px) {
+        font-size: 1.1rem;
+    }
 `
 
 export const H2 = styled.div`
     font-size: 3.4rem;
     color: ${Theme.darkBlue};
+    
+    @media (max-width: 480px) {
+        font-size: 1.8rem;
+    }
 `
 
 
@@ -34,7 +47,11 @@ export const H1 = styled.div`
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     text-align: center;
-    line-height: 9.2rem;
+    line-height: 8.2rem;
+    @media (max-width: 480px) {
+        font-size: 2.5rem;
+        line-height: 4.2rem;
+    }
 `
 
 export const WrapperH1 = styled.div`
@@ -45,6 +62,16 @@ export const WrapperH1 = styled.div`
 export const WrapperAssetHeader = styled.div`
     position: absolute;
     margin: 0.2% -1.3%;
+    @media (max-width: 480px) {
+        margin: 10.5% 5%;
+    }
+`
+
+export const StyledImage = styled(Image)`
+    @media (max-width: 480px) {
+        width: 30px;
+        height: 17px;
+    }
 `
 
 export const P = styled.div`

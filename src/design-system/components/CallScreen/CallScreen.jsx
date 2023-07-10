@@ -1,8 +1,5 @@
-import Image from 'next/image'
 import BreakLine from '../BreakLine/BreakLine'
 import * as Styled from './styles'
-import AssetHeader from '../../utils/img/asset-header.png'
-
 
 export default function CallScreen() {
     return (
@@ -13,12 +10,12 @@ export default function CallScreen() {
                 </Styled.H4>
 
                 <Styled.H2>
-                    <h2 style={{ fontWeight: '200' }}>Menos Conversinha,</h2>
+                    <h2 style={{ fontWeight: '300' }}>Menos Conversinha,</h2>
                 </Styled.H2>
 
                 <Styled.WrapperH1>
                     <Styled.WrapperAssetHeader>
-                        <Image src={AssetHeader} />
+                        <Styled.StyledImage src='/img/asset-header.png' width='49' height='32'/>
                     </Styled.WrapperAssetHeader>
 
                     <Styled.H1>

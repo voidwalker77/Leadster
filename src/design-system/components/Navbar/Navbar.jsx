@@ -12,7 +12,8 @@ import videosDataAlternative from '../../Data/Videos/videosAlternative.json';
 import BreakLine from '../BreakLine/BreakLine';
 import Modal from '../Modal/Modal'
 import dynamic from "next/dynamic";
-
+import { isMobile } from 'react-device-detect';
+import { IconButton, Drawer, List, ListItem } from '@mui/material';
 
 const StyledTab = styled(Tab)(({ theme }) => ({
     '&.Mui-selected': {
@@ -92,7 +93,7 @@ const Navbar = () => {
 
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
-    };
+    }
 
     const handleOpenModal = () => {
         setShowModal(true);
@@ -107,31 +108,76 @@ const Navbar = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         width: '70vw',
+        gap: '1.5rem',
+        ...(window.innerWidth <= 767 && {
+            flexDirection: 'column',
+        })
     };
     const tabsListDiv = {
         display: 'flex',
-        gap: '1rem'
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '1rem',
+        ...(window.innerWidth <= 767 && {
+            flexDirection: 'column',
+        })
+
     };
+
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    }
 
     return (
         <>
             <Styled.Wrapper>
                 <Tabs value={activeTab} onChange={handleTabChange}>
-                    <TabsList style={tabStyle}>
-                        <div style={tabsListDiv}>
-                            {links.map((link) => (
-                                <Styled.StyledLink >
-                                    <StyledTab key={link.id} value={link.id}>
-                                        {link.label}
-                                    </StyledTab>
-                                </Styled.StyledLink>
-                            ))}
-                        </div>
-                        <Styled.containerMenu>
-                            <Styled.TextP>Ordenar por</Styled.TextP>
-                            <PublicationDateDropdown />
-                        </Styled.containerMenu>
-                    </TabsList>
+                    {isMobile ?
+                        <Styled.MenuContainer>
+                            <IconButton onClick={toggleMenu}>
+                                <Styled.MenuIcon />
+                            </IconButton>
+                            <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu} >
+                                <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+                                    <ListItem sx={{ justifyContent: 'center' }}>
+                                        <TabsList style={tabStyle} >
+                                            <div style={tabsListDiv}>
+                                                {links.map((link) => (
+                                                    <Styled.StyledLink >
+                                                        <StyledTab key={link.id} value={link.id}>
+                                                            {link.label}
+                                                        </StyledTab>
+                                                    </Styled.StyledLink>
+                                                ))}
+                                            </div>
+                                            <Styled.containerMenu>
+                                                
+                                                <PublicationDateDropdown />
+                                            </Styled.containerMenu>
+                                        </TabsList>
+                                    </ListItem>
+                                </List>
+                            </Drawer>
+                        </Styled.MenuContainer>
+                        :
+                        <TabsList style={tabStyle}>
+                            <div style={tabsListDiv}>
+                                {links.map((link) => (
+                                    <Styled.StyledLink >
+                                        <StyledTab key={link.id} value={link.id}>
+                                            {link.label}
+                                        </StyledTab>
+                                    </Styled.StyledLink>
+                                ))}
+                            </div>
+                            <Styled.containerMenu>
+                                <Styled.TextP>Ordenar por</Styled.TextP>
+                                <PublicationDateDropdown />
+                            </Styled.containerMenu>
+                        </TabsList>
+                    }
                     <BreakLine />
                     {links.map((link) => (
                         <TabPanel key={link.id} value={link.id}>
@@ -182,5 +228,4 @@ const Navbar = () => {
         </>
     )
 }
-
-export default dynamic (() => Promise.resolve(Navbar), {ssr: false})
+export default dynamic(() => Promise.resolve(Navbar), { ssr: false })
