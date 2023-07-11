@@ -106,14 +106,15 @@ export const CardTitle = styled.h1`
 `
 
 export const MenuIcon = styled(Menu)`
-  color: black;
+    color: ${Theme.darkBlue};
 `;
 
 export const MenuContainer = styled.div`
-  display: flex;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export const MenuItem = styled(ListItemText)`
-  color: black;
+    color: black;
 `;

@@ -42,12 +42,14 @@ export default function PublicationDateDropdown () {
                         variant="body1"
                         component="span"
                         style={{
-                            flex: 1,
                             outline: 'none',
                             border: 'none',
                             backgroundColor: 'transparent',
                             cursor: 'pointer',
-                            fontSize: '1.4rem'
+                            fontSize: '1.4rem',
+                            ...(window.innerWidth <= 767 && {
+                                fontSize: '1.1rem',
+                            })
                         }}
                     >
                         Data de publicação
@@ -58,7 +60,10 @@ export default function PublicationDateDropdown () {
                                 color: '#0a4461',
                                 fontSize: '2.2rem',
                                 transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-                                transition: 'transform 0.3s ease-in-out'
+                                transition: 'transform 0.3s ease-in-out',
+                                ...(window.innerWidth <= 767 && {
+                                    fontSize: '1.6rem',
+                                })
                             }}
                         />
                     </IconButton>
@@ -73,6 +78,9 @@ export default function PublicationDateDropdown () {
                     sx={{
                         fontSize: '1.3rem',
                         color: '#041d29',
+                        ...(window.innerWidth <= 767 && {
+                            fontSize: '1.2rem',
+                        })
                     }}
                 >
                     1 de junho de 2023
@@ -81,6 +89,9 @@ export default function PublicationDateDropdown () {
                     sx={{
                         fontSize: '1.3rem',
                         color: '#041d29',
+                        ...(window.innerWidth <= 767 && {
+                            fontSize: '1.2rem',
+                        })
                     }}
                 >
                     15 de junho de 2023

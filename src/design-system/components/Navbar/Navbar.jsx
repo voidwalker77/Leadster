@@ -14,6 +14,7 @@ import Modal from '../Modal/Modal'
 import dynamic from "next/dynamic";
 import { isMobile } from 'react-device-detect';
 import { IconButton, Drawer, List, ListItem } from '@mui/material';
+import Carousel from '../Carousel/Carousel';
 
 const StyledTab = styled(Tab)(({ theme }) => ({
     '&.Mui-selected': {
@@ -121,7 +122,6 @@ const Navbar = () => {
         ...(window.innerWidth <= 767 && {
             flexDirection: 'column',
         })
-
     };
 
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -137,7 +137,7 @@ const Navbar = () => {
                     {isMobile ?
                         <Styled.MenuContainer>
                             <IconButton onClick={toggleMenu}>
-                                <Styled.MenuIcon />
+                                <Styled.MenuIcon sx={{ fontSize: '3rem' }} />
                             </IconButton>
                             <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu} >
                                 <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
@@ -153,13 +153,13 @@ const Navbar = () => {
                                                 ))}
                                             </div>
                                             <Styled.containerMenu>
-                                                
-                                                <PublicationDateDropdown />
+
                                             </Styled.containerMenu>
                                         </TabsList>
                                     </ListItem>
                                 </List>
                             </Drawer>
+                            <PublicationDateDropdown />
                         </Styled.MenuContainer>
                         :
                         <TabsList style={tabStyle}>
@@ -182,42 +182,47 @@ const Navbar = () => {
                     {links.map((link) => (
                         <TabPanel key={link.id} value={link.id}>
                             <Styled.cardsWrapper>
+                                <Carousel />
                                 {link.content.map((content, index) => (
                                     <Styled.Divider key={content.id}>
-                                        <Styled.CardWrapper>
-                                            <Styled.Card
-                                                onClick={handleOpenModal}
-                                                onMouseEnter={() => handleMouseEnter(index)}
-                                                onMouseLeave={handleMouseLeave}
-                                            >
-                                                <Styled.RoundedImage
-                                                    src={content.content}
-                                                    width={362}
-                                                    height={204}
-                                                    alt={content.label}
-                                                />
-                                                <Styled.OverlayImg active={hoveredIndex === index}>
-                                                    <PlayArrowIcon sx={{
-                                                        fontSize: 120,
-                                                        color: 'white',
-                                                    }}
-                                                    />
-                                                </Styled.OverlayImg>
+                                        {isMobile ?
+                                            (
+                                                'mobile'
+                                            ) : (
+                                                <Styled.CardWrapper>
+                                                    <Styled.Card
+                                                        onClick={handleOpenModal}
+                                                        onMouseEnter={() => handleMouseEnter(index)}
+                                                        onMouseLeave={handleMouseLeave}
+                                                    >
+                                                        <Styled.RoundedImage
+                                                            src={content.content}
+                                                            width={362}
+                                                            height={204}
+                                                            alt={content.label}
+                                                        />
+                                                        <Styled.OverlayImg active={hoveredIndex === index}>
+                                                            <PlayArrowIcon sx={{
+                                                                fontSize: 120,
+                                                                color: 'white',
+                                                            }}
+                                                            />
+                                                        </Styled.OverlayImg>
 
-                                            </Styled.Card>
-                                            <Styled.CardTitle onClick={handleOpenModal}>
-                                                {content.label}
-                                                {showModal && (
-                                                    <Modal
-                                                        colorTitle={<span style={{ color: '#0077b6' }}>Webinar: </span>}
-                                                        title='Como aumentar sua Geração de Leads feat. Traktor'
-                                                        text={content.description}
-                                                        onClose={handleCloseModal}
-                                                    />
-                                                )}
-                                            </Styled.CardTitle>
-                                        </Styled.CardWrapper>
-
+                                                    </Styled.Card>
+                                                    <Styled.CardTitle onClick={handleOpenModal}>
+                                                        {content.label}
+                                                        {showModal && (
+                                                            <Modal
+                                                                colorTitle={<span style={{ color: '#0077b6' }}>Webinar: </span>}
+                                                                title='Como aumentar sua Geração de Leads feat. Traktor'
+                                                                text={content.description}
+                                                                onClose={handleCloseModal}
+                                                            />
+                                                        )}
+                                                    </Styled.CardTitle>
+                                                </Styled.CardWrapper>
+                                            )}
                                     </Styled.Divider>
                                 ))}
                             </Styled.cardsWrapper>

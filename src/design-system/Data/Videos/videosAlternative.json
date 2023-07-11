@@ -2,48 +2,57 @@
   "videos": [
     {
       "id": 1,
-      "label": "Vídeo 1",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
       "id": 2,
-      "label": "Vídeo 2",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
     },
     {
       "id": 3,
-      "label": "Vídeo 3",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
     },
     {
       "id": 4,
-      "label": "Vídeo 4",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam."
     },
     {
       "id": 5,
-      "label": "Vídeo 5",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis."
     },
     {
       "id": 6,
-      "label": "Vídeo 6",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
     },
     {
       "id": 7,
-      "label": "Vídeo 7",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
     },
     {
       "id": 8,
-      "label": "Vídeo 8",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": 9,
-      "label": "Vídeo 9",
-      "content": "/img/thumbnail-2.png"
+      "label": "Como aumentar sua Geração de Leads feat. Traktor",
+      "content": "/img/thumbnail-2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   ]
 }

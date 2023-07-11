@@ -1,5 +1,6 @@
 import BreakLine from '../BreakLine/BreakLine'
 import * as Styled from './styles'
+import {isMobile} from 'react-device-detect';
 
 export default function CallScreen() {
     return (
@@ -15,7 +16,7 @@ export default function CallScreen() {
 
                 <Styled.WrapperH1>
                     <Styled.WrapperAssetHeader>
-                        <Styled.StyledImage src='/img/asset-header.png' width='49' height='32'/>
+                    {isMobile ? null : <Styled.StyledImage src='/img/asset-header.png' width='49' height='32'/>}
                     </Styled.WrapperAssetHeader>
 
                     <Styled.H1>
