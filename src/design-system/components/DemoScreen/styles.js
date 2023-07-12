@@ -28,6 +28,11 @@ export const Seal = styled(Image)`
         width: 80%;
         height: 80%;
     }
+
+    @media (max-width: 480px) {
+        width: 75%;
+        height: 75%;
+    }
 `
 
 export const Rating = styled(Image)`
@@ -79,6 +84,11 @@ export const ButtonWrapper = styled.div`
     align-items: center;
     gap: 1.4rem;
     margin-block: 2rem;
+
+    @media (max-width: 480px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `
 
 export const Button = styled.button`
@@ -110,6 +120,10 @@ export const Informations = styled.span`
 
     @media (max-width: 1024px) {
         font-size: 1.4rem;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 1.3rem;
     }
 `
 
