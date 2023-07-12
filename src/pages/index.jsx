@@ -4,7 +4,6 @@ import Footer from '../design-system/components/Footer/Footer';
 import Header from '../design-system/components/Header/Header';
 import VideoSection from '../design-system/components/VideoSection/VideoSection';
 import Demo from '../design-system/components/DemoScreen/Demo';
-import {isMobile} from 'react-device-detect';
 
 export default function Home() {
 	return (
