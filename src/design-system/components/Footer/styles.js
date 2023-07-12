@@ -19,7 +19,7 @@ export const LogoSection = styled.div`
   	}
 `
 
-export const FooterText = styled.p`
+export const FooterText = styled.div`
   font-size: 1.5rem;
   color: ${Theme.gray};
   margin-top: 1rem;

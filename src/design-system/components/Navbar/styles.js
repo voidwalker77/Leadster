@@ -60,9 +60,9 @@ export const OverlayImg = styled.div`
   transition: opacity 0.3s ease;
   border-radius: 1rem 1rem 0rem 0rem;
 
-  ${({ active }) =>
-        active &&
-        css`
+  ${props =>
+    props.$active &&
+    css`
       opacity: 1;
     `}
 `;
@@ -86,24 +86,6 @@ export const Card = styled.div`
   cursor: pointer;
   border-radius: 1rem 1rem 0rem 0rem;
 
-  @media (max-width: 1024px) {
-    
-  }
-
-  @media (max-width: 900px) {
-    /* Estilos para tela com largura máxima de 900px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
-
-  @media (max-width: 767px) {
-    /* Estilos para tela com largura máxima de 767px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
-
-  @media (max-width: 480px) {
-    /* Estilos para tela com largura máxima de 480px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
 `;
 
 export const CardWrapper = styled.div`
@@ -117,24 +99,6 @@ export const CardWrapper = styled.div`
   border-radius: 1rem;
   cursor: pointer;
 
-  @media (max-width: 1024px) {
-    
-  }
-
-  @media (max-width: 900px) {
-    /* Estilos para tela com largura máxima de 900px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
-
-  @media (max-width: 767px) {
-    /* Estilos para tela com largura máxima de 767px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
-
-  @media (max-width: 480px) {
-    /* Estilos para tela com largura máxima de 480px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
 `;
 
 export const CardTitle = styled.h1`
@@ -146,21 +110,6 @@ export const CardTitle = styled.h1`
 
   &:hover {
     color: #0099ff;
-  }
-
-  @media (max-width: 1024px) {
-    /* Estilos para tela com largura máxima de 1024px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
-
-  @media (max-width: 900px) {
-    /* Estilos para tela com largura máxima de 900px */
-    /* Ajuste os tamanhos dos componentes aqui */
-  }
-
-  @media (max-width: 767px) {
-    /* Estilos para tela com largura máxima de 767px */
-    /* Ajuste os tamanhos dos componentes aqui */
   }
 
   @media (max-width: 480px) {

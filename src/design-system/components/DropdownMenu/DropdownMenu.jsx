@@ -54,8 +54,9 @@ export default function PublicationDateDropdown () {
                     >
                         Data de publicação
                     </Typography>
-                    <IconButton disableRipple>
+                    <IconButton disableRipple component={'span'}>
                         <ArrowDropDownIcon
+                        
                             sx={{
                                 color: '#0a4461',
                                 fontSize: '2.2rem',

@@ -16,7 +16,7 @@ export default function CallScreen() {
 
                 <Styled.WrapperH1>
                     <Styled.WrapperAssetHeader>
-                    {isMobile ? null : <Styled.StyledImage src='/img/asset-header.png' width='49' height='32'/>}
+                    {isMobile ? null : <Styled.StyledImage src='/img/asset-header.png' width='49' height='32' alt='asset header' />}
                     </Styled.WrapperAssetHeader>
 
                     <Styled.H1>

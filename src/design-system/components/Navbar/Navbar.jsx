@@ -14,6 +14,8 @@ import Modal from '../Modal/Modal'
 import dynamic from "next/dynamic";
 import { isMobile } from 'react-device-detect';
 import { IconButton, Drawer, List, ListItem } from '@mui/material';
+import { Menu } from '@mui/icons-material';
+
 
 const StyledTab = styled(Tab)(({ theme }) => ({
     '&.Mui-selected': {
@@ -138,7 +140,7 @@ const Navbar = () => {
                         (
                             <Styled.MenuContainer>
                                 <IconButton onClick={toggleMenu}>
-                                    <Styled.MenuIcon sx={{ fontSize: '3rem' }} />
+                                    <Menu sx={{ color: '#073541', fontSize: '3rem' }} />
                                 </IconButton>
                                 <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu} >
                                     <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
@@ -146,16 +148,13 @@ const Navbar = () => {
                                             <TabsList style={tabStyle} >
                                                 <div style={tabsListDiv}>
                                                     {links.map((link) => (
-                                                        <Styled.StyledLink >
+                                                        <Styled.StyledLink key={link.id}>
                                                             <StyledTab key={link.id} value={link.id}>
                                                                 {link.label}
                                                             </StyledTab>
                                                         </Styled.StyledLink>
                                                     ))}
                                                 </div>
-                                                <Styled.containerMenu>
-
-                                                </Styled.containerMenu>
                                             </TabsList>
                                         </ListItem>
                                     </List>
@@ -167,7 +166,7 @@ const Navbar = () => {
                             <TabsList style={tabStyle}>
                                 <div style={tabsListDiv}>
                                     {links.map((link) => (
-                                        <Styled.StyledLink >
+                                        <Styled.StyledLink key={link.id}>
                                             <StyledTab key={link.id} value={link.id}>
                                                 {link.label}
                                             </StyledTab>
@@ -199,11 +198,12 @@ const Navbar = () => {
                                                     height={204}
                                                     alt={content.label}
                                                 />
-                                                <Styled.OverlayImg active={hoveredIndex === index}>
-                                                    <PlayArrowIcon sx={{
-                                                        fontSize: 120,
-                                                        color: 'white',
-                                                    }}
+                                                <Styled.OverlayImg $active={hoveredIndex === index}>
+                                                    <PlayArrowIcon
+                                                        sx={{
+                                                            fontSize: 120,
+                                                            color: 'white',
+                                                        }}
                                                     />
                                                 </Styled.OverlayImg>
 

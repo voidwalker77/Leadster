@@ -48,9 +48,10 @@ export default function Footer() {
                                 width: '100%',
 
                             }}
-                            button
+                            
                         >
                             <Typography
+                            component={'span'}
                             variant="body1"
                                 sx={{
                                     fontSize: '1.7rem',
@@ -80,9 +81,9 @@ export default function Footer() {
                         sx={{
                             width: '100%',
                         }}
-                        button
                     >
                         <Typography
+                            component={'span'}
                             variant="body1"
                             sx={{
                                 fontSize: '1.7rem',
