@@ -1,5 +1,5 @@
 import '../design-system/styles/globals.css'
-import { Plus_Jakarta_Sans } from '@next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import dynamic from "next/dynamic";
 
 const jakarta = Plus_Jakarta_Sans({
