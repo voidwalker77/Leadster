@@ -28,6 +28,7 @@ export const containerMenu = styled.div`
     gap: 1rem;
     font-weight: bold;
     font-size: 1.5rem;
+    
 `
 
 export const cardsWrapper = styled.div`
@@ -38,6 +39,11 @@ export const cardsWrapper = styled.div`
     gap: 4rem;
     margin-top: 4rem;
     position: relative;
+    
+    @media (max-width: 1024px) {
+    gap: 2rem;
+    
+  }
 `
 
 export const OverlayImg = styled.div`
@@ -65,6 +71,11 @@ export const Divider = styled.div`
 
 `
 
+export const RoundedImage = styled(Image)`
+  border-radius: 1rem;
+  width: 100%;
+`;
+
 export const Card = styled.div`
   display: flex;
   width: 100%;
@@ -74,7 +85,27 @@ export const Card = styled.div`
   position: relative;
   cursor: pointer;
   border-radius: 1rem 1rem 0rem 0rem;
-`
+
+  @media (max-width: 1024px) {
+    
+  }
+
+  @media (max-width: 900px) {
+    /* Estilos para tela com largura máxima de 900px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 767px) {
+    /* Estilos para tela com largura máxima de 767px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 480px) {
+    /* Estilos para tela com largura máxima de 480px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+`;
+
 export const CardWrapper = styled.div`
   box-shadow: 2px 0 14px rgba(0, 0, 0, 0.2), -2px 0 14px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
@@ -85,25 +116,58 @@ export const CardWrapper = styled.div`
   position: relative;
   border-radius: 1rem;
   cursor: pointer;
-`
 
+  @media (max-width: 1024px) {
+    
+  }
 
-export const RoundedImage = styled(Image)`
-  border-radius: 1rem;
-  width: 100%;
+  @media (max-width: 900px) {
+    /* Estilos para tela com largura máxima de 900px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 767px) {
+    /* Estilos para tela com largura máxima de 767px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 480px) {
+    /* Estilos para tela com largura máxima de 480px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
 `;
 
 export const CardTitle = styled.h1`
-    font-size: 1.6rem;
-    max-width: 78%; 
-    word-wrap: break-word; 
-    color: #06293a;
-    margin-block: 2rem;
-    &:hover {
-        color: #0099ff;
-    }
-    
-`
+  font-size: 1.6rem;
+  max-width: 78%;
+  word-wrap: break-word;
+  color: #06293a;
+  margin-block: 2rem;
+
+  &:hover {
+    color: #0099ff;
+  }
+
+  @media (max-width: 1024px) {
+    /* Estilos para tela com largura máxima de 1024px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 900px) {
+    /* Estilos para tela com largura máxima de 900px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 767px) {
+    /* Estilos para tela com largura máxima de 767px */
+    /* Ajuste os tamanhos dos componentes aqui */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+`;
+
 
 export const MenuIcon = styled(Menu)`
     color: ${Theme.darkBlue};

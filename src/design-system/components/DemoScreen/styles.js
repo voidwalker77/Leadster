@@ -3,24 +3,38 @@ import styled from 'styled-components'
 import { Theme } from '../../utils/theme/theme'
 
 export const DemoWrapper = styled.section`
-    padding-block: 4rem;
-
+    padding: 4rem 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 
 export const Graph = styled(Image)`
-
+    @media (max-width: 1024px) {
+        width: 98%;
+        height: 98%;
+    }
 `
 
 export const Seal = styled(Image)`
     box-shadow: 0px 0px 5px .4px rgba(0, 0, 0, 0.3);
+    
+    @media (max-width: 1024px) {
+        width: 80%;
+        height: 80%;
+    }
 `
 
 export const Rating = styled(Image)`
-
+    @media (max-width: 1024px) {
+        width: 25%;
+        height: 25%;
+    }
 `
 
 export const Box = styled.div`
@@ -29,6 +43,8 @@ export const Box = styled.div`
     justify-content: flex-end;
     width: 100%;
     flex-direction: column;
+
+
 `
 
 export const Title = styled.h1`
@@ -37,6 +53,11 @@ export const Title = styled.h1`
     word-wrap: break-word;
     width: 76%;
     color: ${Theme.darkBlue};
+
+    @media (max-width: 1024px) {
+        font-size: 2.7rem;
+        text-align: center;
+    }
 `
 
 export const SubTitle = styled.p`
@@ -47,6 +68,10 @@ export const SubTitle = styled.p`
     word-wrap: break-word;
     color: ${Theme.darkBlue};
     border-bottom: 1px solid #cecece;
+
+    @media (max-width: 1024px) {
+        font-size: 1.9rem;
+    }
 `
 
 export const ButtonWrapper = styled.div`
@@ -66,6 +91,11 @@ export const Button = styled.button`
     font-size: 2.1rem;
     font-weight: 500;
     text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+        padding: 1.4rem;
+        font-size: 1.4rem;
+    }
 `
 
 export const Informations = styled.span`
@@ -77,11 +107,13 @@ export const Informations = styled.span`
     gap: .4rem;
     color: ${Theme.darkBlue};
     word-wrap: break-word;
+
+    @media (max-width: 1024px) {
+        font-size: 1.4rem;
+    }
 `
 
-export const VerticalBar = styled.div`
-  width: 1px;
-  height: 100%;
-  background-color: #000000;
-  display: inline-block;
-`;
+export const Div = styled.div`
+    display: flex;
+    justify-content: center;
+`

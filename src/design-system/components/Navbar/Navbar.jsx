@@ -14,7 +14,6 @@ import Modal from '../Modal/Modal'
 import dynamic from "next/dynamic";
 import { isMobile } from 'react-device-detect';
 import { IconButton, Drawer, List, ListItem } from '@mui/material';
-import Carousel from '../Carousel/Carousel';
 
 const StyledTab = styled(Tab)(({ theme }) => ({
     '&.Mui-selected': {
@@ -110,7 +109,7 @@ const Navbar = () => {
         alignItems: 'center',
         width: '70vw',
         gap: '1.5rem',
-        ...(window.innerWidth <= 767 && {
+        ...(window.innerWidth <= 1024 && {
             flexDirection: 'column',
         })
     };
@@ -119,8 +118,9 @@ const Navbar = () => {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '1rem',
-        ...(window.innerWidth <= 767 && {
+        ...(window.innerWidth <= 1024 && {
             flexDirection: 'column',
+            gap: '2rem'
         })
     };
 
@@ -135,94 +135,92 @@ const Navbar = () => {
             <Styled.Wrapper>
                 <Tabs value={activeTab} onChange={handleTabChange}>
                     {isMobile ?
-                        <Styled.MenuContainer>
-                            <IconButton onClick={toggleMenu}>
-                                <Styled.MenuIcon sx={{ fontSize: '3rem' }} />
-                            </IconButton>
-                            <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu} >
-                                <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
-                                    <ListItem sx={{ justifyContent: 'center' }}>
-                                        <TabsList style={tabStyle} >
-                                            <div style={tabsListDiv}>
-                                                {links.map((link) => (
-                                                    <Styled.StyledLink >
-                                                        <StyledTab key={link.id} value={link.id}>
-                                                            {link.label}
-                                                        </StyledTab>
-                                                    </Styled.StyledLink>
-                                                ))}
-                                            </div>
-                                            <Styled.containerMenu>
+                        (
+                            <Styled.MenuContainer>
+                                <IconButton onClick={toggleMenu}>
+                                    <Styled.MenuIcon sx={{ fontSize: '3rem' }} />
+                                </IconButton>
+                                <Drawer anchor="right" open={isMenuOpen} onClose={toggleMenu} >
+                                    <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+                                        <ListItem sx={{ justifyContent: 'center' }}>
+                                            <TabsList style={tabStyle} >
+                                                <div style={tabsListDiv}>
+                                                    {links.map((link) => (
+                                                        <Styled.StyledLink >
+                                                            <StyledTab key={link.id} value={link.id}>
+                                                                {link.label}
+                                                            </StyledTab>
+                                                        </Styled.StyledLink>
+                                                    ))}
+                                                </div>
+                                                <Styled.containerMenu>
 
-                                            </Styled.containerMenu>
-                                        </TabsList>
-                                    </ListItem>
-                                </List>
-                            </Drawer>
-                            <PublicationDateDropdown />
-                        </Styled.MenuContainer>
-                        :
-                        <TabsList style={tabStyle}>
-                            <div style={tabsListDiv}>
-                                {links.map((link) => (
-                                    <Styled.StyledLink >
-                                        <StyledTab key={link.id} value={link.id}>
-                                            {link.label}
-                                        </StyledTab>
-                                    </Styled.StyledLink>
-                                ))}
-                            </div>
-                            <Styled.containerMenu>
-                                <Styled.TextP>Ordenar por</Styled.TextP>
+                                                </Styled.containerMenu>
+                                            </TabsList>
+                                        </ListItem>
+                                    </List>
+                                </Drawer>
                                 <PublicationDateDropdown />
-                            </Styled.containerMenu>
-                        </TabsList>
+                            </Styled.MenuContainer>
+                        ) :
+                        (
+                            <TabsList style={tabStyle}>
+                                <div style={tabsListDiv}>
+                                    {links.map((link) => (
+                                        <Styled.StyledLink >
+                                            <StyledTab key={link.id} value={link.id}>
+                                                {link.label}
+                                            </StyledTab>
+                                        </Styled.StyledLink>
+                                    ))}
+                                </div>
+                                <Styled.containerMenu>
+                                    <Styled.TextP>Ordenar por</Styled.TextP>
+                                    <PublicationDateDropdown />
+                                </Styled.containerMenu>
+                            </TabsList>
+                        )
                     }
                     <BreakLine />
                     {links.map((link) => (
                         <TabPanel key={link.id} value={link.id}>
                             <Styled.cardsWrapper>
-                                <Carousel />
                                 {link.content.map((content, index) => (
                                     <Styled.Divider key={content.id}>
-                                        {isMobile ?
-                                            (
-                                                'mobile'
-                                            ) : (
-                                                <Styled.CardWrapper>
-                                                    <Styled.Card
-                                                        onClick={handleOpenModal}
-                                                        onMouseEnter={() => handleMouseEnter(index)}
-                                                        onMouseLeave={handleMouseLeave}
-                                                    >
-                                                        <Styled.RoundedImage
-                                                            src={content.content}
-                                                            width={362}
-                                                            height={204}
-                                                            alt={content.label}
-                                                        />
-                                                        <Styled.OverlayImg active={hoveredIndex === index}>
-                                                            <PlayArrowIcon sx={{
-                                                                fontSize: 120,
-                                                                color: 'white',
-                                                            }}
-                                                            />
-                                                        </Styled.OverlayImg>
+                                        <Styled.CardWrapper>
+                                            <Styled.Card
+                                                onClick={handleOpenModal}
+                                                onMouseEnter={() => handleMouseEnter(index)}
+                                                onMouseLeave={handleMouseLeave}
+                                            >
+                                                <Styled.RoundedImage
+                                                    src={content.content}
+                                                    width={362}
+                                                    height={204}
+                                                    alt={content.label}
+                                                />
+                                                <Styled.OverlayImg active={hoveredIndex === index}>
+                                                    <PlayArrowIcon sx={{
+                                                        fontSize: 120,
+                                                        color: 'white',
+                                                    }}
+                                                    />
+                                                </Styled.OverlayImg>
 
-                                                    </Styled.Card>
-                                                    <Styled.CardTitle onClick={handleOpenModal}>
-                                                        {content.label}
-                                                        {showModal && (
-                                                            <Modal
-                                                                colorTitle={<span style={{ color: '#0077b6' }}>Webinar: </span>}
-                                                                title='Como aumentar sua Geração de Leads feat. Traktor'
-                                                                text={content.description}
-                                                                onClose={handleCloseModal}
-                                                            />
-                                                        )}
-                                                    </Styled.CardTitle>
-                                                </Styled.CardWrapper>
-                                            )}
+                                            </Styled.Card>
+                                            <Styled.CardTitle onClick={handleOpenModal}>
+                                                {content.label}
+                                                {showModal && (
+                                                    <Modal
+                                                        colorTitle={<span style={{ color: '#0077b6' }}>Webinar: </span>}
+                                                        title='Como aumentar sua Geração de Leads feat. Traktor'
+                                                        text={content.description}
+                                                        onClose={handleCloseModal}
+                                                    />
+                                                )}
+                                            </Styled.CardTitle>
+                                        </Styled.CardWrapper>
+
                                     </Styled.Divider>
                                 ))}
                             </Styled.cardsWrapper>

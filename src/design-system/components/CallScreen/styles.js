@@ -15,6 +15,11 @@ export const Wrapper = styled.section`
     @media (max-width: 480px) {
         gap: .8rem;
     }
+
+    @media (max-width: 767px) {
+        
+        width: 90vw;
+    }
 `
 export const H4 = styled.div`
     text-transform: uppercase;
@@ -25,22 +30,33 @@ export const H4 = styled.div`
 
     @media (max-width: 480px) {
         font-size: 1.1rem;
+        
+    }
+
+    @media (max-width: 767px) {
+        font-size: 1.2rem;
+        padding: .5rem;   
     }
 `
 
 export const H2 = styled.div`
     font-size: 3.4rem;
     color: ${Theme.darkBlue};
+    text-align: center;
     
     @media (max-width: 480px) {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: 767px) {
         font-size: 1.8rem;
     }
 `
 
 
 export const H1 = styled.div`
-    font-size: 6.5rem;
-    background-image: linear-gradient(-45deg, #2c83fb, #1f76f0);
+    font-size: 6.3rem;
+    background-image: linear-gradient(-45deg, #4a83fb, #1f76f0);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -50,6 +66,11 @@ export const H1 = styled.div`
     line-height: 8.2rem;
     @media (max-width: 480px) {
         font-size: 2.5rem;
+        line-height: 5.2rem;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 2.8rem;
         line-height: 4.2rem;
     }
 `
@@ -57,6 +78,7 @@ export const H1 = styled.div`
 export const WrapperH1 = styled.div`
     display: flex;
     justify-content: flex-end;
+    text-align: center;
 `
 
 export const WrapperAssetHeader = styled.div`
@@ -76,4 +98,8 @@ export const StyledImage = styled(Image)`
 
 export const P = styled.div`
     color: ${Theme.darkBlue};
+    
+    @media (max-width: 1024px) { 
+        text-align: center;
+    }
 `

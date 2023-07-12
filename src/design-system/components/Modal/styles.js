@@ -16,16 +16,20 @@ export const Overlay = styled.section`
 `;
 
 export const ModalContainer = styled.section`
-  background-color: white;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  width: 50rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-top: 4px solid ${Theme.lightBlue};
-  overflow: hidden;
-`;
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-top: 4px solid ${Theme.lightBlue};
+    overflow: hidden;
+
+	@media (max-width: 1024px) {
+		width: 90%;
+	}
+`
 
 export const CloseButton = styled.button`
   position: absolute;
@@ -40,37 +44,54 @@ export const CloseButton = styled.button`
 
 
 export const Title = styled.h2`
-  color: ${Theme.darkBlue};
-  font-size: 2rem;
-  word-wrap: break-word;
-  white-space: pre-line;
-  padding: 0 8%;
-  margin-bottom: 2.5rem;
-  font-weight: 600;
+  	color: ${Theme.darkBlue};
+  	font-size: 2rem;
+  	word-wrap: break-word;
+  	white-space: pre-line;
+  	padding: 0 8%;
+  	margin-bottom: 2.5rem;
+  	font-weight: 600;
+
+  	@media (max-width: 1024px) {
+		font-size: 1.6rem;
+	}
 `
 
 
 export const Iframe = styled.iframe`
-  width: 100%;
-  height: 30rem;
-  margin-bottom: 2rem;
-  border: none;
+  	width: 100%;
+  	height: 30rem;
+  	margin-bottom: 2rem;
+  	border: none;
+
+  	@media (max-width: 1024px) {
+		height: 18rem;
+	}
 `;
 
 export const SectionTitle = styled.h3`
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #cecece;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  text-align: left;
-  color: ${Theme.darkBlue};
+  	padding-bottom: 1rem;
+  	border-bottom: 1px solid #cecece;
+  	font-size: 1.6rem;
+  	margin-bottom: 1rem;
+  	text-align: left;
+  	color: ${Theme.darkBlue};
   
+  	@media (max-width: 1024px) {
+		font-size: 1.4rem;
+	}
 `;
 
 export const Paragraph = styled.p`
   color: ${Theme.darkBlue};
   font-weight: 500;
   margin-bottom: 2.5rem;
+  word-wrap: break-word;
+
+  @media (max-width: 1024px) {
+		font-size: 1.3rem;
+		word-spacing: .4rem;
+	}
 `;
 
 export const IconsContainer = styled.div`
@@ -78,6 +99,10 @@ export const IconsContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: .7rem;
+
+	@media (max-width: 1024px) {
+		flex-wrap: wrap;
+	}
 `
 
 export const SpreadsheetIcon = styled.div`
@@ -99,6 +124,10 @@ export const SpreadsheetIconContainer = styled.div`
     font-weight: 500;
     font-size: 1.3rem;
     cursor: pointer;
+
+	@media (max-width: 1024px) {
+		font-size: 1rem;
+	}
 `
 export const DocumentIcon = styled.div`
     background-color: #A1D8FE;
@@ -119,6 +148,10 @@ export const DocumentIconContainer = styled.div`
     font-weight: 500;
     font-size: 1.3rem;
     cursor: pointer;
+
+	@media (max-width: 1024px) {
+		font-size: 1rem;
+	}
 `
 
 export const PresentationIcon = styled.div`
@@ -140,4 +173,8 @@ export const PresentationIconContainer = styled.div`
     font-weight: 500;
     font-size: 1.3rem;
     cursor: pointer;
+
+	@media (max-width: 1024px) {
+		font-size: 1rem;
+	}
 `

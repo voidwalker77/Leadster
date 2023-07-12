@@ -16,6 +16,10 @@ export const InnerWrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: 1024px) {
+        width: 90vw;
+    }
 `
 
 export const Div = styled.div`

@@ -12,12 +12,9 @@ export default function Home() {
 			<Styled.Wrapper>
 				<Header />
 				<CallScreen />
-				
-				{isMobile ? <VideoSection /> : <VideoSection />}
-				
-				{isMobile ? 'null' : <Demo />}
-
-				{isMobile ? 'null' : <Footer />}
+				<VideoSection />
+				<Demo />
+				<Footer />
 			</Styled.Wrapper>
 		</>
 	)
