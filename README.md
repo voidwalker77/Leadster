@@ -24,9 +24,9 @@ Neste projeto, foram tomadas as seguintes decisões:
 
 - Uso do React.js como biblioteca JavaScript para a construção da interface do usuário.
 
-- Uso do Next.js como framework React para facilitar a criação de aplicações web modernas, com suporte a Server-Side Rendering (SSR) e Static Site Generation (SSG).
+- Uso do Next.js como framework React.
 
-- Uso do Styled Components como uma biblioteca para estilização de componentes com CSS-in-JS, oferecendo maior modularidade e reutilização de estilos.
+- Uso do Styled Components como uma biblioteca para estilização de componentes.
 
 ## Organização do Código
 
